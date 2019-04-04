@@ -11,8 +11,12 @@ class PrefeituraSpider(scrapy.Spider):
 
 
     def parse(self, response):
-        for licitacoes in response.xpath('//td/b').getall():
-            # licitacao = licitacoes.css
+        # descricao = response.css('table tbody tr td::text').getall()
+        for licitacoes in response.css('table tbody tr td b::text').getall():
 
-            yield {'Licitacao' : licitacoes}
+
+            # licitacoes.replace(" ", "")
+
+
+            yield {'Licitacao: ': licitacoes, 'Descricao: ': ''}
 
