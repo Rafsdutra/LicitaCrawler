@@ -8,7 +8,11 @@
 import scrapy
 
 
-class PrefeituraitzItem(scrapy.Item):
+class BiddingItem(scrapy.Item):
+
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    modalidade = scrapy.Field()
+    numerocp = scrapy.Field()
+    objetivo = scrapy.Field()
+    link = scrapy.Field()
