@@ -1,5 +1,4 @@
 
-
 import scrapy
 from NCrawler.items import BiddingItem
 
