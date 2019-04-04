@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for PrefeituraITZ project
+# Scrapy settings for NCrawler project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,14 +9,14 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'PrefeituraITZ'
+BOT_NAME = 'NCrawler'
 
-SPIDER_MODULES = ['PrefeituraITZ.spiders']
-NEWSPIDER_MODULE = 'PrefeituraITZ.spiders'
+SPIDER_MODULES = ['NCrawler.spiders']
+NEWSPIDER_MODULE = 'NCrawler.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'PrefeituraITZ (+http://www.yourdomain.com)'
+#USER_AGENT = 'NCrawler (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -47,13 +47,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'PrefeituraITZ.middlewares.PrefeituraitzSpiderMiddleware': 543,
+#    'NCrawler.middlewares.PrefeituraitzSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'PrefeituraITZ.middlewares.PrefeituraitzDownloaderMiddleware': 543,
+#    'NCrawler.middlewares.PrefeituraitzDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -65,7 +65,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'PrefeituraITZ.pipelines.PrefeituraitzPipeline': 300,
+#    'NCrawler.pipelines.PrefeituraitzPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
