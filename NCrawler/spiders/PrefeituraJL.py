@@ -1,7 +1,6 @@
 
-
 import scrapy
-from NCrawler.NCrawler.items import BiddingItem
+from NCrawler.items import BiddingItem
 
 class PrefeituraSpider(scrapy.Spider):
     name = 'Prefeitura'

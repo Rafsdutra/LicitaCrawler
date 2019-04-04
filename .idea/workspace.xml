@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6f657855-c306-4733-87c1-8a859c3f3329" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrefeituraITZ/spiders/Acailandia.py" beforeDir="false" afterPath="$PROJECT_DIR$/PrefeituraITZ/spiders/Acailandia.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCrawler/spiders/Acailandia.py" beforeDir="false" afterPath="$PROJECT_DIR$/NCrawler/spiders/Acailandia.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCrawler/spiders/PrefeituraJL.py" beforeDir="false" afterPath="$PROJECT_DIR$/NCrawler/spiders/PrefeituraJL.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scrapy.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/scrapy.cfg" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,19 +16,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+        <entry file="file://$PROJECT_DIR$/NCrawler/spiders/Acailandia.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/PrefeituraITZ/spiders/Acailandia.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+            <state relative-caret-position="51">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
               </folding>
@@ -34,26 +27,34 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PrefeituraITZ/items.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scrapy.cfg">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+            <state relative-caret-position="102">
+              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PrefeituraITZ/pipelines.py">
+        <entry file="file://$PROJECT_DIR$/NCrawler/spiders/PrefeituraITZ.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NCrawler/spiders/PrefeituraJL.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+              <folding>
+                <element signature="e#2#15#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PrefeituraITZ/middlewares.py">
+        <entry file="file://$PROJECT_DIR$/NCrawler/items.py">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -70,6 +71,9 @@
         <option value="$PROJECT_DIR$/PrefeituraITZ/spiders/Prefeitura.py" />
         <option value="$PROJECT_DIR$/PrefeituraITZ/items.py" />
         <option value="$PROJECT_DIR$/PrefeituraITZ/spiders/Acailandia.py" />
+        <option value="$PROJECT_DIR$/NCrawler/spiders/Acailandia.py" />
+        <option value="$PROJECT_DIR$/NCrawler/spiders/PrefeituraJL.py" />
+        <option value="$PROJECT_DIR$/scrapy.cfg" />
       </list>
     </option>
   </component>
@@ -106,12 +110,12 @@
             <path>
               <item name="9Crawler" type="b2602c69:ProjectViewProjectNode" />
               <item name="9Crawler" type="462c0819:PsiDirectoryNode" />
-              <item name="PrefeituraITZ" type="462c0819:PsiDirectoryNode" />
+              <item name="NCrawler" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="9Crawler" type="b2602c69:ProjectViewProjectNode" />
               <item name="9Crawler" type="462c0819:PsiDirectoryNode" />
-              <item name="PrefeituraITZ" type="462c0819:PsiDirectoryNode" />
+              <item name="NCrawler" type="462c0819:PsiDirectoryNode" />
               <item name="spiders" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -210,12 +214,12 @@
       <workItem from="1554209584874" duration="614000" />
       <workItem from="1554210448979" duration="4542000" />
       <workItem from="1554290837054" duration="652000" />
-      <workItem from="1554378769759" duration="7220000" />
+      <workItem from="1554378769759" duration="7633000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13028000" />
+    <option name="totallyTimeSpent" value="13441000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -228,8 +232,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="1372" height="740" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26136363" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26136363" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -280,13 +285,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PrefeituraITZ/items.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -301,6 +299,46 @@
           <folding>
             <element signature="e#24#37#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NCrawler/items.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NCrawler/spiders/PrefeituraITZ.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NCrawler/spiders/PrefeituraJL.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="e#2#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NCrawler/spiders/Acailandia.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scrapy.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
         </state>
       </provider>
     </entry>

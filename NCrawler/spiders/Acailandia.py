@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import scrapy
-from PrefeituraITZ.items import BiddingItem
+from NCrawler.items import BiddingItem
 
 
 class AcailandiaSpider(scrapy.Spider):
