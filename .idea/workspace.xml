@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f657855-c306-4733-87c1-8a859c3f3329" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NCrawler/spiders/Acailandia.py" beforeDir="false" afterPath="$PROJECT_DIR$/NCrawler/spiders/Acailandia.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCrawler/spiders/PrefeituraJL.py" beforeDir="false" afterPath="$PROJECT_DIR$/NCrawler/spiders/PrefeituraJL.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scrapy.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/scrapy.cfg" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,11 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/NCrawler/spiders/Acailandia.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="425">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
               </folding>
@@ -27,7 +24,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scrapy.cfg">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
@@ -71,9 +68,9 @@
         <option value="$PROJECT_DIR$/PrefeituraITZ/spiders/Prefeitura.py" />
         <option value="$PROJECT_DIR$/PrefeituraITZ/items.py" />
         <option value="$PROJECT_DIR$/PrefeituraITZ/spiders/Acailandia.py" />
-        <option value="$PROJECT_DIR$/NCrawler/spiders/Acailandia.py" />
         <option value="$PROJECT_DIR$/NCrawler/spiders/PrefeituraJL.py" />
         <option value="$PROJECT_DIR$/scrapy.cfg" />
+        <option value="$PROJECT_DIR$/NCrawler/spiders/Acailandia.py" />
       </list>
     </option>
   </component>
@@ -214,12 +211,20 @@
       <workItem from="1554209584874" duration="614000" />
       <workItem from="1554210448979" duration="4542000" />
       <workItem from="1554290837054" duration="652000" />
-      <workItem from="1554378769759" duration="7633000" />
+      <workItem from="1554378769759" duration="8109000" />
     </task>
+    <task id="LOCAL-00001" summary="alteração no module name do projeto">
+      <created>1554387689708</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1554387689709</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13441000" />
+    <option name="totallyTimeSpent" value="13917000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -232,7 +237,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="1372" height="740" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26136363" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -259,6 +263,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="alteração no module name do projeto" />
+    <option name="LAST_COMMIT_MESSAGE" value="alteração no module name do projeto" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/9Crawler$Prefeitura.coverage" NAME="Prefeitura Coverage Results" MODIFIED="1554210695263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PrefeituraITZ/spiders" />
@@ -325,20 +333,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NCrawler/spiders/Acailandia.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scrapy.cfg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NCrawler/spiders/Acailandia.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
