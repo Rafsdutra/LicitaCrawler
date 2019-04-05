@@ -3,25 +3,20 @@ import scrapy
 from NCrawler.items import BiddingItem
 
 class PrefeituraSpider(scrapy.Spider):
-    name = 'Prefeitura'
+    name = 'JoaoLisboa'
     allowed_domains = ['joaolisboa.ma.gov.br/']
     start_urls = ['http://joaolisboa.ma.gov.br/modalidades']
 
 
     def parse(self, response):
-        # descricao = response.css('table tbody tr td::text').getall()
-        for licitacoes in response.css('div div div h3 span::text').get():
-            link = response.css('div#content div.row li a::attr(href)')
+
+        for modalidade in response.css('div#content div.row div.span8 a').get():
+            link = modalidade.css('a::attr(href)').get()
+            yield response.follow(link, self.parse_binding)
 
 
-            # licitacoes.replace(" ", "")
-
-
-            yield response.follow(link, self.parse(licitacoes))
-
-
-    def parse_licitacoes(self, response):
-        link = response.url
+    def parse_binding(self, response):
+        link = response.css('div#content div.row li a::attr(href)').get()
         modalidade = response.css('div#content div.row a strong::text').get()
         # titulo = response.css('div#content div.row div.span8 li a strong::text').get()
 
