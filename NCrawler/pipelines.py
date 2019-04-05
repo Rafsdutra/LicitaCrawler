@@ -7,9 +7,15 @@
 
 from datetime import datetime
 
+from scrapy.exceptions import DropItem
+
+
 class FilterDatePipeline(object):
     def process_item(self, item, spider):
         now = datetime.now()
-        print(now.year)
-        if item['numerocp'][0].split('/')[-1] == now.year:
+        date_licitacao  = int(item['numerocp'][0].split('/')[-1])
+        if int(date_licitacao) == now.year:
+            print(date_licitacao)
             return item
+        else:
+            raise DropItem("Licitação fora do ano atual")
