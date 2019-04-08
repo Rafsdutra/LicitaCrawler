@@ -13,13 +13,15 @@ class PrefeituraSpider(scrapy.Spider):
 
     def parse(self, response):
 
-        for licitacao in response.css('div.container table tbody tr'):
-            # response.xpath('//div/table[2]/text()').extract_first()
+        for licitacao in response.css('div.container table tbody tr').getall()[1]:
+
             modalidade = licitacao.css('td b::text').extract_first()[:-14]
             objetivo = licitacao.css('td::text').extract()
             numerocp = licitacao.css('td b::text').re_first(r'\d+[/|_]+\d*')
 
 
-            yield BiddingItem(modalidade = modalidade,objetivo = objetivo,numerocp = numerocp)
+            yield BiddingItem(modalidade = modalidade,
+                              objetivo = objetivo,
+                              numerocp = numerocp)
 
 
