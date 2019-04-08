@@ -6,14 +6,14 @@ from NCrawler.items import BiddingItem
 
 
 class PrefeituraSpider(scrapy.Spider):
-    name = 'Prefeitura'
+    name = 'Imperatriz'
     allowed_domains = ['imperatriz.ma.gov.br']
     start_urls = ['http://servicos.imperatriz.ma.gov.br/licitacoes']
 
 
     def parse(self, response):
 
-        for licitacao in response.css('div.container table tbody tr').getall()[1]:
+        for licitacao in response.css('div.container table tbody tr'):
 
             modalidade = licitacao.css('td b::text').extract_first()[:-14]
             objetivo = licitacao.css('td::text').extract()
