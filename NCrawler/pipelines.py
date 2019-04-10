@@ -38,6 +38,7 @@ class SendMail(object):
      self.modalidade = str(item['modalidade'])
      self.objetivo = str(item['objetivo'])
      self.numerocp = str(item['numerocp'])
+
      return item
 
 
@@ -54,9 +55,13 @@ class SendMail(object):
         msg['Subject'] = 'Licitacoes '
 
         nomePrefeitura = spider.name
-        intro = "Licitacoes da Prefeitura de " + nomePrefeitura + '\n\n'
+        linkPrefeitura = spider.start_urls
+        intro = "Licitacoes da Prefeitura de " + nomePrefeitura + '\n'
+        link = "Link para licitacões: " + str(linkPrefeitura) + '\n'
         # body = 'Oi ' + intro
-        body = intro + 'Modalidade: ' + self.modalidade + '\n' + 'Objetivo: ' + " ".join((self.objetivo.split()))  + '\n'+ 'Numero CP: ' + self.numerocp + '\n\n'
+        head = '======================================================================================================='
+        foot = '======================================================================================================='
+        body = intro + '\n' + link + '\n' + head + '\n' + 'Modalidade: ' + self.modalidade + '\n' + 'Objetivo: ' + " ".join((self.objetivo.split()))  + '\n'+ 'Numero CP: ' + self.numerocp + '\n' + foot + '\n\n'
         msg.attach(MIMEText(body, 'plain'))
 
         server = smtplib.SMTP("smtp.mailtrap.io", 2525)
