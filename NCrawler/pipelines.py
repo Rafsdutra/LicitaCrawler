@@ -4,11 +4,14 @@
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-
+import os
 from datetime import datetime
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
+
+import jinja2
+from jinja2 import Environment, PackageLoader
 
 
 class FilterDatePipeline(object):
@@ -18,7 +21,7 @@ class FilterDatePipeline(object):
         date_licitacao = int(item['numerocp'][0].split('/')[-1])
         if int(date_licitacao) == now.year:
             print(date_licitacao)
-            # return item
+            return item
         # else:
         #     raise DropItem("Licitação fora do ano atual")
 
@@ -38,13 +41,15 @@ class SendMail(object):
      self.modalidade = str(item['modalidade'])
      self.objetivo = str(item['objetivo'])
      self.numerocp = str(item['numerocp'])
+     # self.link = item['link']
 
      return item
 
 
 
     def close_spider(self, spider):
-
+        nomePrefeitura = spider.name
+        linkPrefeitura = spider.start_urls
 
         from_email = "b89b239862ecb5"
         to_email = "rafsdutra32@gmail.com"
@@ -52,17 +57,20 @@ class SendMail(object):
         msg = MIMEMultipart()
         msg['From'] = from_email
         msg['To'] = to_email
-        msg['Subject'] = 'Licitacoes '
+        msg['Subject'] = 'Licitacoes da Prefeitura de ' + nomePrefeitura
 
-        nomePrefeitura = spider.name
-        linkPrefeitura = spider.start_urls
+
+
         intro = "Licitacoes da Prefeitura de " + nomePrefeitura + '\n'
-        link = "Link para licitacões: " + str(linkPrefeitura) + '\n'
-        # body = 'Oi ' + intro
+        linkPage = "Link para a página de licitacões: " + str(linkPrefeitura) + '\n'
+
+
         head = '======================================================================================================='
         foot = '======================================================================================================='
-        body = intro + '\n' + link + '\n' + head + '\n' + 'Modalidade: ' + self.modalidade + '\n' + 'Objetivo: ' + " ".join((self.objetivo.split()))  + '\n'+ 'Numero CP: ' + self.numerocp + '\n' + foot + '\n\n'
+
+        body = intro + '\n' + linkPage + '\n' + '\n\n' + head + '\n' + 'Modalidade: ' + self.modalidade + '\n' + 'Objetivo: ' + " ".join((self.objetivo.split()))  + '\n'+ 'Numero CP: ' + self.numerocp + '\n' + foot + '\n\n'
         msg.attach(MIMEText(body, 'plain'))
+
 
         server = smtplib.SMTP("smtp.mailtrap.io", 2525)
         server.starttls()
@@ -70,8 +78,6 @@ class SendMail(object):
         text = msg.as_string()
         server.sendmail(from_email, to_email, text)
         server.quit()
-
-
         print('Email Enviado!!')
 
 
