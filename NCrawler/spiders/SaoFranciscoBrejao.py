@@ -6,7 +6,7 @@ from NCrawler.items import BiddingItem
 class PrefeituraSpider(scrapy.Spider):
     name = 'São Francisco do Brejão'
     allowed_domains = ['saofranciscodobrejao.ma.gov.br']
-    start_urls = ['https://www.saofranciscodobrejao.ma.gov.br/Licitacoes/Todas?page=16']
+    start_urls = ['https://www.saofranciscodobrejao.ma.gov.br/Licitacoes/Abertas']
 
     def parse(self, response):
         for licitacao in response.css('div.container div.bx-resultado'):
