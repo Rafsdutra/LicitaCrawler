@@ -7,7 +7,7 @@ from NCrawler.items import BiddingItem
 class GovEdsonlobaoSpider(scrapy.Spider):
     name = 'Governador Edson Lobão'
     allowed_domains = ['governadoredisonlobao.ma.gov.br']
-    start_urls = ['https://governadoredisonlobao.ma.gov.br/licitacoes']
+    start_urls = ['https://www.governadoredisonlobao.ma.gov.br/licitacoes']
 
     def parse(self, response):
 
@@ -20,7 +20,7 @@ class GovEdsonlobaoSpider(scrapy.Spider):
             link = licitacao.css('div.panel-body a::attr(href)').extract_first()
             modalidade = ' '.join(licitacao.css('div.panel-heading strong::text').extract_first().split()[:-2])
             numerocp = licitacao.css('div.panel-heading strong::text').re(r'\d*[/|_]+\d*')
-            objetivo = licitacao.css('div.panel-body::text').getall()[4]
+            objetivo = licitacao.css('div.panel-body::text').extract()[5]
 
             yield BiddingItem(link=link, modalidade=modalidade, numerocp=numerocp, objetivo=objetivo)
 
