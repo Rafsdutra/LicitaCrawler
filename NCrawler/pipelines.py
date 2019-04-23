@@ -10,8 +10,6 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
 
-import jinja2
-from jinja2 import Environment, PackageLoader
 
 
 class FilterDatePipeline(object):
@@ -36,14 +34,12 @@ class SendMail(object):
 
 
     def process_item(self, item, spider):
-
-     print("######## Processando pipelines... ##########")
-     self.modalidade = str(item['modalidade'])
-     self.objetivo = str(item['objetivo'])
-     self.numerocp = str(item['numerocp'])
-     # self.link = item['link']
-
-     return item
+        print("######## Processando pipelines... ##########")
+        self.modalidade = str(item['modalidade'])
+        self.objetivo = str(item['objetivo'])
+        self.numerocp = str(item['numerocp'])
+        # self.link = item['link']
+        return item
 
 
 
@@ -52,7 +48,7 @@ class SendMail(object):
         linkPrefeitura = spider.start_urls
 
         from_email = "b89b239862ecb5"
-        to_email = "rafsdutra32@gmail.com"
+        to_email = "to@smtp.mailtrap.io"
 
         msg = MIMEMultipart()
         msg['From'] = from_email
@@ -68,6 +64,7 @@ class SendMail(object):
         head = '======================================================================================================='
         foot = '======================================================================================================='
 
+        # body = 'oi'
         body = intro + '\n' + linkPage + '\n' + '\n\n' + head + '\n' + 'Modalidade: ' + self.modalidade + '\n' + 'Objetivo: ' + " ".join((self.objetivo.split()))  + '\n'+ 'Numero CP: ' + self.numerocp + '\n' + foot + '\n\n'
         msg.attach(MIMEText(body, 'plain'))
 
@@ -76,11 +73,10 @@ class SendMail(object):
         server.starttls()
         server.login(from_email, "f20851757ed914")
         text = msg.as_string()
+        print("###### Enviando Email...######")
         server.sendmail(from_email, to_email, text)
-        server.quit()
         print('Email Enviado!!')
-
-
+        server.quit()
         print('######## Fechando spider...#########')
 
 
