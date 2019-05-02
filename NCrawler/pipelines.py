@@ -9,41 +9,56 @@ from datetime import datetime
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
+import datetime
 
+from scrapy.exceptions import DropItem
 
 
 class FilterDatePipeline(object):
     def process_item(self, item, spider):
 
-        now = datetime.now()
+        now = datetime.date.today().year
         date_licitacao = int(item['numerocp'][0].split('/')[-1])
-        if int(date_licitacao) == now.year:
+        if int(date_licitacao) == now:
             print(date_licitacao)
             return item
-        # else:
-        #     raise DropItem("Licitação fora do ano atual")
+        else:
+            raise DropItem("Licitação fora do ano atual")
+
+class FilterModalidade(object):
+    def process_item(self, item, spider):
+        pregaoEletronico = 'PREGÃO ELETRONICO'
+        pregaoPresencial = 'PREGÃO PRESENCIAL'
+        modalidade = str(item['modalidade']).upper()
+        if pregaoPresencial in modalidade:
+            print('Pregão Presencial em', modalidade)
+            return item
+        elif pregaoEletronico in modalidade:
+            print('Pregão Eletronico em', modalidade)
+            return item
+        else:
+            raise DropItem("Item não é Pregão Presencial ou Pregão Eletronico")
+
 
 
 class SendMail(object):
 
-
-
     def open_spider(self, spider):
         print("######### Iniciando o spider... #########")
 
-
-
     def process_item(self, item, spider):
+
+
         print("######## Processando pipelines... ##########")
+
         self.modalidade = str(item['modalidade'])
         self.objetivo = str(item['objetivo'])
         self.numerocp = str(item['numerocp'])
-        # self.link = item['link']
+
         return item
 
-
-
     def close_spider(self, spider):
+
         nomePrefeitura = spider.name
         linkPrefeitura = spider.start_urls
 
@@ -55,19 +70,17 @@ class SendMail(object):
         msg['To'] = to_email
         msg['Subject'] = 'Licitacoes da Prefeitura de ' + nomePrefeitura
 
-
-
         intro = "Licitacoes da Prefeitura de " + nomePrefeitura + '\n'
         linkPage = "Link para a página de licitacões: " + str(linkPrefeitura) + '\n'
-
 
         head = '======================================================================================================='
         foot = '======================================================================================================='
 
-        # body = 'oi'
-        body = intro + '\n' + linkPage + '\n' + '\n\n' + head + '\n' + 'Modalidade: ' + self.modalidade + '\n' + 'Objetivo: ' + " ".join((self.objetivo.split()))  + '\n'+ 'Numero CP: ' + self.numerocp + '\n' + foot + '\n\n'
-        msg.attach(MIMEText(body, 'plain'))
 
+
+        body = intro + '\n' + linkPage + '\n' + '\n\n' + head + '\n' + 'Modalidade: ' + self.modalidade + '\n' + 'Objetivo: ' + " ".join(
+            (self.objetivo.split())) + '\n' + 'Numero CP: ' + self.numerocp + '\n' + foot + '\n\n'
+        msg.attach(MIMEText(body, 'plain'))
 
         server = smtplib.SMTP("smtp.mailtrap.io", 2525)
         server.starttls()
@@ -78,8 +91,3 @@ class SendMail(object):
         print('Email Enviado!!')
         server.quit()
         print('######## Fechando spider...#########')
-
-
-
-
-
