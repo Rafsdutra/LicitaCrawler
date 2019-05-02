@@ -9,29 +9,26 @@ from datetime import datetime
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
-
+from NCrawler.services.filters import relevance
+from scrapy.exceptions import DropItem
 
 
 class FilterDatePipeline(object):
-    def process_item(self, item, spider):
 
+    def process_item(self, item, spider):
         now = datetime.now()
-        date_licitacao = int(item['numerocp'][0].split('/')[-1])
+        date_licitacao = int(item['numerocp'].split('/')[-1])
         if int(date_licitacao) == now.year:
             print(date_licitacao)
             return item
-        # else:
-        #     raise DropItem("Licitação fora do ano atual")
+        else:
+            raise DropItem("Licitação fora do ano atual")
 
 
 class SendMail(object):
 
-
-
     def open_spider(self, spider):
         print("######### Iniciando o spider... #########")
-
-
 
     def process_item(self, item, spider):
         print("######## Processando pipelines... ##########")
@@ -40,8 +37,6 @@ class SendMail(object):
         self.numerocp = str(item['numerocp'])
         # self.link = item['link']
         return item
-
-
 
     def close_spider(self, spider):
         nomePrefeitura = spider.name
@@ -68,7 +63,6 @@ class SendMail(object):
         body = intro + '\n' + linkPage + '\n' + '\n\n' + head + '\n' + 'Modalidade: ' + self.modalidade + '\n' + 'Objetivo: ' + " ".join((self.objetivo.split()))  + '\n'+ 'Numero CP: ' + self.numerocp + '\n' + foot + '\n\n'
         msg.attach(MIMEText(body, 'plain'))
 
-
         server = smtplib.SMTP("smtp.mailtrap.io", 2525)
         server.starttls()
         server.login(from_email, "f20851757ed914")
@@ -80,6 +74,12 @@ class SendMail(object):
         print('######## Fechando spider...#########')
 
 
-
+class FilterSimilarityPipeline(object):
+    def process_item(self, item, spider):
+        print(relevance(item['objetivo']))
+        if relevance(item['objetivo']) >= 75.0:
+            return item
+        else:
+            raise DropItem("Licitação não é relacionada a marketing")
 
 
