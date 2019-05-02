@@ -8,6 +8,7 @@ class PrefeituraSpider(scrapy.Spider):
     start_urls = ['http://joaolisboa.ma.gov.br/modalidades']
 
 
+
     def parse(self, response):
 
         for modalidade in response.css('div#content div.row div.span8 a').get():
