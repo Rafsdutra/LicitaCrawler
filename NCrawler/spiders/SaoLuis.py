@@ -17,6 +17,5 @@ class SaoluisSpider(scrapy.Spider):
 
             yield BiddingItem (modalidade=modalidade,
                                objetivo=objetivo,
-                               numerocp=numerocp
-                                 )
+                               numerocp=numerocp)
 
