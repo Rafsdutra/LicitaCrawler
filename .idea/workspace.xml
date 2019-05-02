@@ -220,7 +220,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/PycharmProjects/webcrowler/venv/bin/python" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/../webcrowler/venv/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/PrefeituraITZ" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -236,8 +236,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.items" />
       <item itemvalue="Python.Prefeitura" />
+      <item itemvalue="Python.items" />
     </list>
     <recent_temporary>
       <list>
@@ -365,7 +365,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/PycharmProjects/webcrowler/venv/lib/python3.6/site-packages/scrapy/spidermiddlewares/offsite.py">
+    <entry file="file://$PROJECT_DIR$/../webcrowler/venv/lib/python3.6/site-packages/scrapy/spidermiddlewares/offsite.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="79">
           <caret line="28" selection-start-line="28" selection-end-line="28" />
