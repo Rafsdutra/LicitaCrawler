@@ -49,7 +49,7 @@ class SendMail(object):
     def process_item(self, item, spider):
 
 
-        print("######## Processando pipelines... ##########")
+        print("######## Processando pipelines... ############")
 
         self.modalidade = str(item['modalidade'])
         self.objetivo = str(item['objetivo'])
