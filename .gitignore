@@ -1,4 +1,3 @@
 .idea/*
- NCrawler/
+ NCrawler/venv
  *.pyc
- workspace.xml
