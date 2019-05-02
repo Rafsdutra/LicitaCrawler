@@ -13,6 +13,8 @@ import datetime
 
 from scrapy.exceptions import DropItem
 
+from NCrawler.services.filters import relevance
+
 
 class FilterDatePipeline(object):
     def process_item(self, item, spider):
@@ -91,3 +93,14 @@ class SendMail(object):
         print('Email Enviado!!')
         server.quit()
         print('######## Fechando spider...#########')
+
+
+class FilterSimilarityPipeline(object):
+    def process_item(self, item, spider):
+        print(relevance(item['objetivo']))
+        if relevance(item['objetivo']) >= 75.0:
+            return item
+        else:
+            raise DropItem("Licitação não é relacionada a marketing")
+
+
