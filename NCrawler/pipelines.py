@@ -10,6 +10,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
 import datetime
+import envconfig as conf
 
 from scrapy.exceptions import DropItem
 
@@ -27,6 +28,7 @@ class FilterDatePipeline(object):
         else:
             raise DropItem("Licitação fora do ano atual")
 
+
 class FilterModalidade(object):
     def process_item(self, item, spider):
         pregaoEletronico = 'PREGÃO ELETRONICO'
@@ -42,15 +44,12 @@ class FilterModalidade(object):
             raise DropItem("Item não é Pregão Presencial ou Pregão Eletronico")
 
 
-
 class SendMail(object):
 
     def open_spider(self, spider):
         print("######### Iniciando o spider... #########")
 
     def process_item(self, item, spider):
-
-
         print("######## Processando pipelines... ############")
 
         self.modalidade = str(item['modalidade'])
@@ -60,11 +59,10 @@ class SendMail(object):
         return item
 
     def close_spider(self, spider):
-
         nomePrefeitura = spider.name
         linkPrefeitura = spider.start_urls
 
-        from_email = "b89b239862ecb5"
+        from_email = conf.email['login']
         to_email = "to@smtp.mailtrap.io"
 
         msg = MIMEMultipart()
@@ -78,15 +76,13 @@ class SendMail(object):
         head = '======================================================================================================='
         foot = '======================================================================================================='
 
-
-
         body = intro + '\n' + linkPage + '\n' + '\n\n' + head + '\n' + 'Modalidade: ' + self.modalidade + '\n' + 'Objetivo: ' + " ".join(
             (self.objetivo.split())) + '\n' + 'Numero CP: ' + self.numerocp + '\n' + foot + '\n\n'
         msg.attach(MIMEText(body, 'plain'))
 
-        server = smtplib.SMTP("smtp.mailtrap.io", 2525)
+        server = smtplib.SMTP(conf.email['smtp'], conf.email['port'])
         server.starttls()
-        server.login(from_email, "f20851757ed914")
+        server.login(from_email, conf.email['password'])
         text = msg.as_string()
         print("###### Enviando Email...######")
         server.sendmail(from_email, to_email, text)
@@ -102,5 +98,3 @@ class FilterSimilarityPipeline(object):
             return item
         else:
             raise DropItem("Licitação não é relacionada a marketing")
-
-

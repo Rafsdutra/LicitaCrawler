@@ -1,6 +1,5 @@
 import spacy
 
-
 def relevance(sentence):
     nlp = spacy.load('pt')
     main_doc = nlp(sentence)
