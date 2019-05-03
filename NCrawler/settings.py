@@ -65,9 +65,9 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'NCrawler.pipelines.FilterDatePipeline': 300,
+    'NCrawler.pipelines.FilterDatePipeline': 400,
     #'NCrawler.pipelines.SendMail': 500
-    'NCrawler.pipelines.FilterSimilarityPipeline': 300
+    'NCrawler.pipelines.FilterSimilarityPipeline': 100
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
