@@ -6,7 +6,7 @@ import re
 class AcailandiaSpider(scrapy.Spider):
     name = 'Acailandia'
     allowed_domains = ['acailandia.ma.gov.br']
-    start_urls = ['https://www.acailandia.ma.gov.br/licitacoes']
+    start_urls = ['https://www.acailandia.ma.gov.br/licitacoes?modalidade=&paginaView=&setor=2&status=&numero=&objeto=']
 
     def parse(self, response):
 

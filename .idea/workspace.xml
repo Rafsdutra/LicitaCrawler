@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f657855-c306-4733-87c1-8a859c3f3329" name="Default Changelist" comment="">
+    <list default="true" id="6f657855-c306-4733-87c1-8a859c3f3329" name="Default Changelist" comment="filtro de data">
+      <change beforePath="$PROJECT_DIR$/.idea/9Crawler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/9Crawler.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NCrawler/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/NCrawler/pipelines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCrawler/services/filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/NCrawler/services/filters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCrawler/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/NCrawler/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCrawler/spiders/GovEdsonLobao.py" beforeDir="false" afterPath="$PROJECT_DIR$/NCrawler/spiders/GovEdsonLobao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCrawler/spiders/Grajau.py" beforeDir="false" afterPath="$PROJECT_DIR$/NCrawler/spiders/Grajau.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCrawler/spiders/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/NCrawler/spiders/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCrawler/spiders/Acailandia.py" beforeDir="false" afterPath="$PROJECT_DIR$/NCrawler/spiders/Acailandia.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,16 +14,56 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="SpiderKeeper" type="feb32156:DbDataSourceImpl" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NCrawler/spiders/Acailandia.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="136">
+              <caret line="8" column="118" selection-start-line="8" selection-start-column="118" selection-end-line="8" selection-end-column="118" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/NCrawler/pipelines.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="43">
+              <caret line="80" column="9" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
+              <folding>
+                <element signature="e#193#202#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/envconfig.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -55,7 +93,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
@@ -86,7 +124,6 @@
         <option value="$PROJECT_DIR$/PrefeituraITZ/spiders/Acailandia.py" />
         <option value="$PROJECT_DIR$/NCrawler/spiders/PrefeituraJL.py" />
         <option value="$PROJECT_DIR$/scrapy.cfg" />
-        <option value="$PROJECT_DIR$/NCrawler/spiders/Acailandia.py" />
         <option value="$PROJECT_DIR$/NCrawler/spiders/Imperatriz.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/requirements.txt" />
@@ -97,8 +134,9 @@
         <option value="$PROJECT_DIR$/NCrawler/spiders/Grajau.py" />
         <option value="$PROJECT_DIR$/NCrawler/spiders/__init__.py" />
         <option value="$PROJECT_DIR$/NCrawler/core.py" />
-        <option value="$PROJECT_DIR$/NCrawler/pipelines.py" />
         <option value="$PROJECT_DIR$/NCrawler/settings.py" />
+        <option value="$PROJECT_DIR$/NCrawler/spiders/Acailandia.py" />
+        <option value="$PROJECT_DIR$/NCrawler/pipelines.py" />
       </list>
     </option>
   </component>
@@ -130,17 +168,7 @@
               <item name="9Crawler" type="b2602c69:ProjectViewProjectNode" />
               <item name="9Crawler" type="462c0819:PsiDirectoryNode" />
               <item name="NCrawler" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="9Crawler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="9Crawler" type="462c0819:PsiDirectoryNode" />
-              <item name="NCrawler" type="462c0819:PsiDirectoryNode" />
               <item name="spiders" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="9Crawler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -250,7 +278,7 @@
       <workItem from="1557141240463" duration="7666000" />
       <workItem from="1557229053861" duration="7285000" />
       <workItem from="1557237854286" duration="377000" />
-      <workItem from="1557314842777" duration="1631000" />
+      <workItem from="1557314842777" duration="4098000" />
     </task>
     <task id="LOCAL-00001" summary="alteração no module name do projeto">
       <created>1554387689708</created>
@@ -284,7 +312,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53137000" />
+    <option name="totallyTimeSpent" value="55604000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -297,6 +325,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="1372" height="740" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2931818" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -312,13 +341,13 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3273906" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.4019449" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.6401945" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32901135" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.32954547" />
+      <window_info anchor="right" id="Database" order="4" weight="0.32954547" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -405,16 +434,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/NCrawler/core.py" />
-    <entry file="file://$PROJECT_DIR$/NCrawler/pipelines.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1547">
-          <caret line="101" column="45" selection-start-line="101" selection-start-column="45" selection-end-line="101" selection-end-column="45" />
-          <folding>
-            <element signature="e#193#202#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NCrawler/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -461,13 +480,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/envconfig.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/PycharmProjects/webcrowler/venv/lib/python3.6/site-packages/flask_restful_swagger/swagger.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -510,16 +522,6 @@
     <entry file="file://$PROJECT_DIR$/project.egg-info/dependency_links.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/NCrawler/spiders/Acailandia.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/PycharmProjects/webcrowler/venv/lib/python3.6/site-packages/scrapyd/config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -541,6 +543,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NCrawler/spiders/Acailandia.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="118" selection-start-line="8" selection-start-column="118" selection-end-line="8" selection-end-column="118" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/envconfig.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NCrawler/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="80" column="9" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
+          <folding>
+            <element signature="e#193#202#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

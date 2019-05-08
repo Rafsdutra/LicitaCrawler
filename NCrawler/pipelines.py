@@ -71,13 +71,14 @@ class SendMail(object):
         self.modalidade = str(item['modalidade'])
         self.objetivo = str(item['objetivo'])
         self.numerocp = str(item['numerocp'])
+        self.link = str(item['link'])
 
         return item
 
 
     def close_spider(self, spider):
         nomePrefeitura = spider.name
-        linkPrefeitura = spider.start_urls
+        #linkPrefeitura = spider.start_urls
 
         msg = MIMEMultipart()
         msg['From'] = conf.email['login']
@@ -85,7 +86,7 @@ class SendMail(object):
         msg['Subject'] = 'Licitacoes da Prefeitura de ' + nomePrefeitura
 
         intro = "Licitacoes da Prefeitura de " + nomePrefeitura + '\n'
-        linkPage = "Link para a página de licitacões: " + str(linkPrefeitura) + '\n'
+        linkPage = "Link para a página de licitacões: " + str(self.link) + '\n'
 
         head = '======================================================================================================='
         foot = '======================================================================================================='
