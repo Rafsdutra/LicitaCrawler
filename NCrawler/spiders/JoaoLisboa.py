@@ -1,26 +1,23 @@
-
 import scrapy
 from NCrawler.items import BiddingItem
+from scrapy.http import Request
+
 
 class PrefeituraSpider(scrapy.Spider):
-    name = 'JoaoLisboa'
-    allowed_domains = ['joaolisboa.ma.gov.br/']
-    start_urls = ['http://joaolisboa.ma.gov.br/modalidades']
-
-
+    name = 'Joao Lisboa'
+    allowed_domains = ['joaolisboa.ma.gov.br']
+    start_urls = ['http://joaolisboa.ma.gov.br/licitacoes/pregaopresencial']
 
     def parse(self, response):
+        for item in response.css('div.row div.span8 li'):
+            link = item.css('a::attr(href)').extract_first()
+            yield response.follow(link, self.bidding)
 
-        for modalidade in response.css('div#content div.row div.span8 a').get():
-            link = modalidade.css('a::attr(href)').get()
-            yield response.follow(link, self.parse_binding)
+    def bidding(self, response):
 
 
-    def parse_binding(self, response):
-        link = response.css('div#content div.row li a::attr(href)').get()
-        modalidade = response.css('div#content div.row a strong::text').get()
-        # titulo = response.css('div#content div.row div.span8 li a strong::text').get()
+            modalidade = response.css('div.row div.span8 div.blog-post h4::text').extract_first()[:18]
+            objetivo = ' '.join(response.css('div.row div.span8 div.blog-post p::text').re(r'\w+'))
+            numerocp = ' '.join(response.css('div.row div.span8 div.blog-post p::text').re(r'\w+')[:2])
 
-        resultado = BiddingItem(modalidade = modalidade, link = link)
-
-        yield resultado
+            yield BiddingItem(modalidade=modalidade, objetivo=objetivo, numerocp=numerocp)

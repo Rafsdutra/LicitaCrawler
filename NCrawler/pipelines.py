@@ -17,16 +17,26 @@ from scrapy.exceptions import DropItem
 from NCrawler.services.filters import relevance
 
 
+class FilterSimilarityPipeline(object):
+    def process_item(self, item, spider):
+        print(relevance(item['objetivo']))
+        if relevance(item['objetivo']) >= 0.75:
+            print("FILTRO DE SIMILARIDADE: OK")
+            return item
+        else:
+            raise DropItem("FILTRO DE SIMILARIDADE: Licitação não é relacionada a marketing")
+
+
 class FilterDatePipeline(object):
     def process_item(self, item, spider):
 
         now = datetime.date.today().year
-        date_licitacao = int(item['numerocp'][0].split('/')[-1])
+        date_licitacao = int(item['numerocp'].replace(' ', '/').split('/')[-1])
         if int(date_licitacao) == now:
-            print(date_licitacao)
+            print("FILTRO DE DATA: OK")
             return item
         else:
-            raise DropItem("Licitação fora do ano atual")
+            raise DropItem("FILTRO DE DATA: Licitação fora do ano atual")
 
 
 class FilterModalidade(object):
@@ -35,13 +45,13 @@ class FilterModalidade(object):
         pregaoPresencial = 'PREGÃO PRESENCIAL'
         modalidade = str(item['modalidade']).upper()
         if pregaoPresencial in modalidade:
-            print('Pregão Presencial em', modalidade)
+            print('FILTRO DE MODALIDADE: Pregão Presencial OK')
             return item
         elif pregaoEletronico in modalidade:
-            print('Pregão Eletronico em', modalidade)
+            print('FILTRO DE MODALIDADE: Pregão Eletronico OK')
             return item
         else:
-            raise DropItem("Item não é Pregão Presencial ou Pregão Eletronico")
+            raise DropItem("FILTRO DE MODALIDADE: Item não é Pregão Presencial ou Pregão Eletronico")
 
 
 class SendMail(object):
@@ -56,11 +66,19 @@ class SendMail(object):
         self.objetivo = str(item['objetivo'])
         self.numerocp = str(item['numerocp'])
 
-        return item
+
+        if self.modalidade is None:
+            print('NÃO HÁ RETORNO')
+        else:
+            print('HÁ RETORNO')
+            return item
+
 
     def close_spider(self, spider):
         nomePrefeitura = spider.name
         linkPrefeitura = spider.start_urls
+
+
 
         from_email = conf.email['login']
         to_email = "to@smtp.mailtrap.io"
@@ -78,9 +96,12 @@ class SendMail(object):
 
         body = intro + '\n' + linkPage + '\n' + '\n\n' + head + '\n' + 'Modalidade: ' + self.modalidade + '\n' + 'Objetivo: ' + " ".join(
             (self.objetivo.split())) + '\n' + 'Numero CP: ' + self.numerocp + '\n' + foot + '\n\n'
+
+
+
         msg.attach(MIMEText(body, 'plain'))
 
-        server = smtplib.SMTP(conf.email['smtp'], conf.email['port'])
+        server = smtplib.SMTP(conf.email['smtp_server'], conf.email['port'])
         server.starttls()
         server.login(from_email, conf.email['password'])
         text = msg.as_string()
@@ -91,10 +112,4 @@ class SendMail(object):
         print('######## Fechando spider...#########')
 
 
-class FilterSimilarityPipeline(object):
-    def process_item(self, item, spider):
-        print(relevance(item['objetivo']))
-        if relevance(item['objetivo']) >= 75.0:
-            return item
-        else:
-            raise DropItem("Licitação não é relacionada a marketing")
+
