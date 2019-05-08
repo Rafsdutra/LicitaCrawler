@@ -17,26 +17,16 @@ from scrapy.exceptions import DropItem
 from NCrawler.services.filters import relevance
 
 
-class FilterSimilarityPipeline(object):
-    def process_item(self, item, spider):
-        print(relevance(item['objetivo']))
-        if relevance(item['objetivo']) >= 0.75:
-            print("FILTRO DE SIMILARIDADE: OK")
-            return item
-        else:
-            raise DropItem("FILTRO DE SIMILARIDADE: Licitação não é relacionada a marketing")
-
-
 class FilterDatePipeline(object):
     def process_item(self, item, spider):
 
         now = datetime.date.today().year
-        date_licitacao = int(item['numerocp'].replace(' ', '/').split('/')[-1])
+        date_licitacao = int(item['numerocp'].split('/')[-1])
         if int(date_licitacao) == now:
-            print("FILTRO DE DATA: OK")
+            print(date_licitacao)
             return item
         else:
-            raise DropItem("FILTRO DE DATA: Licitação fora do ano atual")
+            raise DropItem("Licitação fora do ano atual")
 
 
 class FilterModalidade(object):
@@ -45,13 +35,13 @@ class FilterModalidade(object):
         pregaoPresencial = 'PREGÃO PRESENCIAL'
         modalidade = str(item['modalidade']).upper()
         if pregaoPresencial in modalidade:
-            print('FILTRO DE MODALIDADE: Pregão Presencial OK')
+            print('Pregão Presencial em', modalidade)
             return item
         elif pregaoEletronico in modalidade:
-            print('FILTRO DE MODALIDADE: Pregão Eletronico OK')
+            print('Pregão Eletronico em', modalidade)
             return item
         else:
-            raise DropItem("FILTRO DE MODALIDADE: Item não é Pregão Presencial ou Pregão Eletronico")
+            raise DropItem("Item não é Pregão Presencial ou Pregão Eletronico")
 
 
 class SendMail(object):
@@ -65,6 +55,7 @@ class SendMail(object):
     def open_spider(self, spider):
         print("######### Iniciando o spider... #########")
 
+
     def process_item(self, item, spider):
         print("######## Processando pipelines... ############")
 
@@ -73,7 +64,6 @@ class SendMail(object):
         self.numerocp = str(item['numerocp'])
 
         return item
-
 
     def close_spider(self, spider):
         nomePrefeitura = spider.name
@@ -106,4 +96,10 @@ class SendMail(object):
         print('######## Fechando spider...#########')
 
 
-
+class FilterSimilarityPipeline(object):
+    def process_item(self, item, spider):
+        print(relevance(item['objetivo']))
+        if relevance(item['objetivo']) >= 0.0:
+            return item
+        else:
+            raise DropItem("Licitação não é relacionada a marketing")

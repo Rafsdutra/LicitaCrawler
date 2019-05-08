@@ -1,6 +1,9 @@
 import spacy
+import gensim
+
 
 def relevance(sentence):
+
     nlp = spacy.load('pt')
     main_doc = nlp(sentence)
     search_doc = nlp('arte midia marketing publicidade campanha divulgação')
