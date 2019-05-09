@@ -20,7 +20,7 @@ from NCrawler.services.filters import relevance
 class FilterSimilarityPipeline(object):
     def process_item(self, item, spider):
         print(relevance(item['objetivo']))
-        if relevance(item['objetivo']) >= 0.75:
+        if relevance(item['objetivo']) >= 0.0:
             print("FILTRO DE SIMILARIDADE: OK")
             return item
         else:
@@ -61,6 +61,7 @@ class SendMail(object):
         self.numerocp = None
         self.body = ' '
         self.to_email = "to@smtp.mailtrap.io"
+        self.link = 'Sem link'
 
     def open_spider(self, spider):
         print("######### Iniciando o spider... #########")

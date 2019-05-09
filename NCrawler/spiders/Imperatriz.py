@@ -18,9 +18,11 @@ class PrefeituraSpider(scrapy.Spider):
             modalidade = licitacao.css('td b::text').extract_first()[:-14].upper()
             objetivo = " ".join(licitacao.css('td::text').re(r'\S+\w*'))
             numerocp = licitacao.css('td b::text').re_first(r'\d+[/|_]+\d*')
+            link = licitacao.css('td a::attr(href)').extract_first()
 
-            yield BiddingItem(modalidade = modalidade,
-                              objetivo = objetivo,
-                              numerocp = numerocp)
+            yield BiddingItem(modalidade=modalidade,
+                              objetivo=objetivo,
+                              numerocp=numerocp,
+                              link=link)
 
 

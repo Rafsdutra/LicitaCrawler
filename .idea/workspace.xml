@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f657855-c306-4733-87c1-8a859c3f3329" name="Default Changelist" comment="filtro de data">
-      <change beforePath="$PROJECT_DIR$/.idea/9Crawler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/9Crawler.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NCrawler/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/NCrawler/pipelines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCrawler/spiders/Acailandia.py" beforeDir="false" afterPath="$PROJECT_DIR$/NCrawler/spiders/Acailandia.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCrawler/spiders/Imperatriz.py" beforeDir="false" afterPath="$PROJECT_DIR$/NCrawler/spiders/Imperatriz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCrawler/spiders/SaoLuis.py" beforeDir="false" afterPath="$PROJECT_DIR$/NCrawler/spiders/SaoLuis.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,8 +36,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NCrawler/spiders/Acailandia.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="118" selection-start-line="8" selection-start-column="118" selection-end-line="8" selection-end-column="118" />
+            <state relative-caret-position="272">
+              <caret line="16" column="21" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="21" />
+              <folding>
+                <element signature="e#24#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NCrawler/spiders/Imperatriz.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="329">
+              <caret line="20" column="63" lean-forward="true" selection-start-line="20" selection-start-column="63" selection-end-line="20" selection-end-column="63" />
+              <folding>
+                <element signature="e#24#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NCrawler/spiders/Araguaina.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
               </folding>
@@ -48,10 +70,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/NCrawler/spiders/SaoLuis.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NCrawler/pipelines.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43">
-              <caret line="80" column="9" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
+            <state relative-caret-position="57">
+              <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
               <folding>
                 <element signature="e#193#202#0" expanded="true" />
               </folding>
@@ -124,7 +155,6 @@
         <option value="$PROJECT_DIR$/PrefeituraITZ/spiders/Acailandia.py" />
         <option value="$PROJECT_DIR$/NCrawler/spiders/PrefeituraJL.py" />
         <option value="$PROJECT_DIR$/scrapy.cfg" />
-        <option value="$PROJECT_DIR$/NCrawler/spiders/Imperatriz.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/example.envconfig.py" />
@@ -136,15 +166,17 @@
         <option value="$PROJECT_DIR$/NCrawler/core.py" />
         <option value="$PROJECT_DIR$/NCrawler/settings.py" />
         <option value="$PROJECT_DIR$/NCrawler/spiders/Acailandia.py" />
+        <option value="$PROJECT_DIR$/NCrawler/spiders/Imperatriz.py" />
         <option value="$PROJECT_DIR$/NCrawler/pipelines.py" />
+        <option value="$PROJECT_DIR$/NCrawler/spiders/SaoLuis.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="7" />
-    <option name="y" value="20" />
-    <option name="width" value="1342" />
-    <option name="height" value="695" />
+    <option name="x" value="-23" />
+    <option name="y" value="25" />
+    <option name="width" value="1338" />
+    <option name="height" value="692" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -278,7 +310,7 @@
       <workItem from="1557141240463" duration="7666000" />
       <workItem from="1557229053861" duration="7285000" />
       <workItem from="1557237854286" duration="377000" />
-      <workItem from="1557314842777" duration="4098000" />
+      <workItem from="1557314842777" duration="10657000" />
     </task>
     <task id="LOCAL-00001" summary="alteração no module name do projeto">
       <created>1554387689708</created>
@@ -312,7 +344,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55604000" />
+    <option name="totallyTimeSpent" value="62163000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -325,9 +357,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="1372" height="740" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2931818" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2931818" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -341,7 +372,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3273906" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.6401945" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.5786062" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32901135" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -444,20 +475,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NCrawler/spiders/Imperatriz.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="19" column="76" selection-start-line="19" selection-start-column="76" selection-end-line="19" selection-end-column="76" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NCrawler/spiders/Araguaina.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/NCrawler/spiders/Axixa.py">
@@ -544,16 +562,6 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/NCrawler/spiders/Acailandia.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="118" selection-start-line="8" selection-start-column="118" selection-end-line="8" selection-end-column="118" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/envconfig.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -561,13 +569,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/NCrawler/spiders/Araguaina.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/NCrawler/pipelines.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="80" column="9" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
+        <state relative-caret-position="57">
+          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
           <folding>
             <element signature="e#193#202#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NCrawler/spiders/Acailandia.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="21" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="21" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NCrawler/spiders/Imperatriz.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="20" column="63" lean-forward="true" selection-start-line="20" selection-start-column="63" selection-end-line="20" selection-end-column="63" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NCrawler/spiders/SaoLuis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
         </state>
       </provider>
     </entry>
