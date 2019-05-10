@@ -1,4 +1,4 @@
-# Automatically created by: shub deploy
+# Automatically created by: scrapyd-deploy
 
 from setuptools import setup, find_packages
 

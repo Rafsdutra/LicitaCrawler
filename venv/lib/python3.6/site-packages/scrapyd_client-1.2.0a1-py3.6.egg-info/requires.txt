@@ -1,0 +1,3 @@
+requests
+Scrapy>=0.17
+six

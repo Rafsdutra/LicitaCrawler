@@ -1,0 +1,33 @@
+#!/bin/bash
+
+
+
+echo -----------EXECUTANDO SPIDERS----------------
+
+
+scrapy runspider Acailandia.py
+sleep 2s
+echo fim
+scrapy runspider Araguaina.py
+sleep 2s
+echo fim
+scrapy runspider GovEdsonLobao.py
+sleep 2s
+echo fim
+scrapy runspider Imperatriz.py
+sleep 2s
+echo fim
+scrapy runspider JoaoLisboa.py
+sleep 2s
+echo fim
+scrapy runspider SaoFranciscoBrejao.py
+sleep 2s
+echo fim
+scrapy runspider SaoLuis.py
+sleep 2s
+echo fim
+
+
+
+echo -----------FINALIZADO---------------
+
