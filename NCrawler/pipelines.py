@@ -75,6 +75,11 @@ class SendMail(object):
         return item
 
     def close_spider(self, spider):
+
+        if len(self.licitacoes) <= 0:
+            print('sem licitações')
+            return
+
         nomePrefeitura = spider.name
         msg = MIMEMultipart()
         msg['From'] = conf.email['login']
@@ -86,7 +91,6 @@ class SendMail(object):
             cidade=nomePrefeitura,
             licitacoes=self.licitacoes
         )
-
         msg.attach(MIMEText(content, 'html'))
         server = smtplib.SMTP(conf.email['smtp_server'], conf.email['port'])
         server.starttls()
