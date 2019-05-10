@@ -1,4 +1,13 @@
-.idea/*
+.idea/
 NCrawler/venv
 *.pyc
 envconfig.py
+logs/
+eggs
+twistd.pid
+build/
+dbs/
+NCrawler/__pycache__/
+SpiderKeeper.db
+output.egg
+dbs/

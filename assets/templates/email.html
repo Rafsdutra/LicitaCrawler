@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Email</title>
+</head>
+<body style="margin: 0; padding: 0">
+
+<table border="0" cellpadding="0" cellspacing="0" width="70%" style="margin: auto">
+    <tr width="260" valign="top">
+        <td style="padding: 30px">
+            <img style="margin: auto; display: block" src="https://9talk.com.br/wp-content/uploads/2018/03/logo-h-2.png">
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: center; padding-bottom: 30px; color: #153643; font-family: Arial, sans-serif; font-size: 24px;">
+            <b>Licitacoes da Prefeitura de {{ cidade }}</b>
+        </td>
+    </tr>
+
+    {% for licitacao in licitacoes %}
+    <tr>
+        <td width="260" valign="top" style="color: #153643; font-family: Arial, sans-serif; font-size: 16px; line-height: 20px;">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+                <tr style="text-align: justify; margin-top: 20px">
+                    <td style="padding: 8px;">
+                       <b>Modalidade:</b> {{ licitacao.modalidade }}
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px;">
+                        <b>Objetivo:</b> {{ licitacao.objetivo }}
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px;">
+                        <b>Numero CP:</b> {{ licitacao.ncp }}
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-bottom: 1px solid #cccccc; padding: 8px;">
+                        <b>Link:</b> <a href="{{ licitacao.link }}">Acessar</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px;">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

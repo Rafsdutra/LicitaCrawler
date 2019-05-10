@@ -11,7 +11,7 @@ from email.mime.text import MIMEText
 import smtplib
 import datetime
 import envconfig as conf
-
+import codecs
 from scrapy.exceptions import DropItem
 
 from NCrawler.services.filters import relevance
@@ -56,12 +56,8 @@ class FilterModalidade(object):
 
 class SendMail(object):
     def __init__(self):
-        self.modalidade = None
-        self.objetivo = None
-        self.numerocp = None
-        self.body = ' '
         self.to_email = "to@smtp.mailtrap.io"
-        self.link = 'Sem link'
+        self.licitacoes = []
 
     def open_spider(self, spider):
         print("######### Iniciando o spider... #########")
@@ -69,33 +65,29 @@ class SendMail(object):
     def process_item(self, item, spider):
         print("######## Processando pipelines... ############")
 
-        self.modalidade = str(item['modalidade'])
-        self.objetivo = str(item['objetivo'])
-        self.numerocp = str(item['numerocp'])
-        self.link = str(item['link'])
+        self.licitacoes.append({
+            'modalidade': str(item['modalidade']),
+            'objetivo': str(item['objetivo']),
+            'ncp': str(item['numerocp']),
+            'link': str(item['link'])
+        })
 
         return item
 
-
     def close_spider(self, spider):
         nomePrefeitura = spider.name
-        #linkPrefeitura = spider.start_urls
-
         msg = MIMEMultipart()
         msg['From'] = conf.email['login']
         msg['To'] = self.to_email
         msg['Subject'] = 'Licitacoes da Prefeitura de ' + nomePrefeitura
 
-        intro = "Licitacoes da Prefeitura de " + nomePrefeitura + '\n'
-        linkPage = "Link para a página de licitacões: " + str(self.link) + '\n'
+        template = conf.env.get_template('email.html')
+        content = template.render(
+            cidade=nomePrefeitura,
+            licitacoes=self.licitacoes
+        )
 
-        head = '======================================================================================================='
-        foot = '======================================================================================================='
-
-        body = intro + '\n' + linkPage + '\n' + '\n\n' + head + '\n' + 'Modalidade: ' + self.modalidade + '\n' + 'Objetivo: ' + " ".join(
-            (self.objetivo.split())) + '\n' + 'Numero CP: ' + self.numerocp + '\n' + foot + '\n\n'
-        msg.attach(MIMEText(body, 'plain'))
-
+        msg.attach(MIMEText(content, 'html'))
         server = smtplib.SMTP(conf.email['smtp_server'], conf.email['port'])
         server.starttls()
         server.login(conf.email['login'], conf.email['password'])
@@ -106,6 +98,3 @@ class SendMail(object):
         print('Email Enviado!!')
         server.quit()
         print('######## Fechando spider...#########')
-
-
-
