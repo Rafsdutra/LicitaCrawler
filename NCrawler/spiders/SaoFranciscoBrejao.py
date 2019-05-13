@@ -20,6 +20,3 @@ class SaoFranciscoBrejaoSpider(scrapy.Spider):
                               numerocp=numerocp,
                               link=link)
 
-
-# sendMail()
-
