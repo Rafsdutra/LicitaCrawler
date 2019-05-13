@@ -12,6 +12,7 @@ import smtplib
 import datetime
 import envconfig as conf
 import codecs
+import json
 from scrapy.exceptions import DropItem
 
 from NCrawler.services.filters import relevance
@@ -25,6 +26,28 @@ class FilterSimilarityPipeline(object):
             return item
         else:
             raise DropItem("FILTRO DE SIMILARIDADE: Licitação não é relacionada a marketing")
+
+
+class FilterEmailEnviado(object):
+    def process_item(self, item, spider):
+        # info = []
+        numcp = str(item['numerocp']),
+        Prefeitura = spider.name
+
+        with open('Emails.txt') as f:
+            content = f.read()
+            if str(numcp) in content:
+                raise DropItem('Email já foi enviado! Cancelando Operação!')
+            else:
+
+                f = open('Emails.txt', 'a')
+                f.write('Prefeitura: ' + Prefeitura)
+                f.write('\n')
+                f.write('Numero CP: ' + str(numcp))
+                f.write('\n\n')
+                f.close()
+
+                return item
 
 
 class FilterDatePipeline(object):
@@ -75,10 +98,11 @@ class SendMail(object):
         return item
 
     def close_spider(self, spider):
-
         if len(self.licitacoes) <= 0:
             print('sem licitações')
             return
+
+        idMail = 1
 
         nomePrefeitura = spider.name
         msg = MIMEMultipart()
@@ -99,6 +123,7 @@ class SendMail(object):
 
         print("###### Enviando Email...######")
         server.sendmail(conf.email['login'], self.to_email, text)
-        print('Email Enviado!!')
+        print("Email enviado com sucesso!")
         server.quit()
+
         print('######## Fechando spider...#########')

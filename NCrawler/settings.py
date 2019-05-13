@@ -68,6 +68,7 @@ ITEM_PIPELINES = {
     'NCrawler.pipelines.FilterDatePipeline': 100,
     'NCrawler.pipelines.FilterModalidade': 200,
     'NCrawler.pipelines.FilterSimilarityPipeline': 300,
+    'NCrawler.pipelines.FilterEmailEnviado': 400,
     'NCrawler.pipelines.SendMail': 500,
 }
 
