@@ -29,23 +29,30 @@ class FilterSimilarityPipeline(object):
 
 
 class FilterEmailEnviado(object):
+    def createTxt(self):
+
+        f = open('emails.txt', 'a')
+        f.close()
+
     def process_item(self, item, spider):
-        # info = []
         numcp = str(item['numerocp']),
         Prefeitura = spider.name
 
-        with open('Emails.txt') as f:
+        self.createTxt()
+
+        with open('emails.txt') as f:
             content = f.read()
             if str(numcp) in content:
-                raise DropItem('Email já foi enviado! Cancelando Operação!')
+                raise DropItem('FILTRO DE EMAIL: Email já enviado!')
             else:
 
-                f = open('Emails.txt', 'a')
+                f = open('emails.txt', 'a')
                 f.write('Prefeitura: ' + Prefeitura)
                 f.write('\n')
                 f.write('Numero CP: ' + str(numcp))
                 f.write('\n\n')
                 f.close()
+                print('FILTRO DE EMAIL: OK!')
 
                 return item
 
