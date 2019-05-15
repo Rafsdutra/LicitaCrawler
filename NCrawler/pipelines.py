@@ -109,8 +109,6 @@ class SendMail(object):
             print('sem licitações')
             return
 
-        idMail = 1
-
         nomePrefeitura = spider.name
         msg = MIMEMultipart()
         msg['From'] = conf.email['login']

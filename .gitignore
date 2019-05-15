@@ -11,3 +11,4 @@ NCrawler/__pycache__/
 SpiderKeeper.db
 output.egg
 dbs/
+venv/
