@@ -1,6 +1,6 @@
 # 9Crawler
 
-O Webcrawler da 9Talk
+O Webcrawler para buscar licitações em aberto das prefeituras do sul do Maranhão
 
 Comando para abrir o shell do crawler:
 
