@@ -1,4 +1,4 @@
-# 9Crawler
+# LicitaCrawler
 
 Webcrawler para buscar licitações em aberto das prefeituras do sul do Maranhão
 
